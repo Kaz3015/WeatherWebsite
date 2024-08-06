@@ -73,13 +73,13 @@
         document.querySelector(".sunrise p").innerHTML = convertUtcToLocalTime(data.sys.sunrise, data.timezone);
         document.querySelector(".sunset p").innerHTML = convertUtcToLocalTime(data.sys.sunset, data.timezone);
         if (data.weather[0].main === "Clear") {
-        document.getElementById("weather-icon").src = "images/clear.png";
+        document.getElementById("weather-icon").src = "clear.png";
       } else if (data.weather[0].main === "Clouds") {
-        document.getElementById("weather-icon").src = "images/clouds.png";
+        document.getElementById("weather-icon").src = "clouds.png";
       } else if (data.weather[0].main === "Rain") {
-        document.getElementById("weather-icon").src = "images/rain.png";
+        document.getElementById("weather-icon").src = "rain.png";
       } else if (data.weather[0].main === "Snow") {
-        document.getElementById = "images/snow.png";
+        document.getElementById = "snow.png";
       } 
       } else {
         alert("Invalid city. Please enter a valid city name.");
@@ -106,15 +106,14 @@
       document.querySelector(".sunrise p").innerHTML = convertUtcToLocalTime(data.sys.sunrise, data.timezone);
       document.querySelector(".sunset p").innerHTML = convertUtcToLocalTime(data.sys.sunset, data.timezone);
       if (data.weather[0].main === "Clear") {
-        document.getElementById("weather-icon").src = "images/clear.png";
+        document.getElementById("weather-icon").src = "clear.png";
       } else if (data.weather[0].main === "Clouds") {
-        document.getElementById("weather-icon").src = "images/clouds.png";
+        document.getElementById("weather-icon").src = "clouds.png";
       } else if (data.weather[0].main === "Rain") {
-        document.getElementById("weather-icon").src = "images/rain.png";
+        document.getElementById("weather-icon").src = "rain.png";
       } else if (data.weather[0].main === "Snow") {
-        document.body.style.backgroundImage = "url('images/snow.png')";
+        document.body.style.backgroundImage = "snow.png";
       }
-      //document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
     }
 
     function getCurrentLocation() {
