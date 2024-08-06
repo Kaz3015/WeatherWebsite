@@ -8,6 +8,7 @@
 <body>
 
   <div class="container">
+    <img id = "background">
     <div class="search-box">
       <input type="text" class="search-bar" placeholder="Search for a city..." spellcheck="false">
       <button> <img src="images/search.png"> </button>
@@ -71,7 +72,15 @@
         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + "mph";
         document.querySelector(".sunrise p").innerHTML = convertUtcToLocalTime(data.sys.sunrise, data.timezone);
         document.querySelector(".sunset p").innerHTML = convertUtcToLocalTime(data.sys.sunset, data.timezone);
-        document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
+        if (data.weather[0].main === "Clear") {
+        document.getElementById("weather-icon").src = "images/clear.png";
+      } else if (data.weather[0].main === "Clouds") {
+        document.getElementById("weather-icon").src = "images/clouds.png";
+      } else if (data.weather[0].main === "Rain") {
+        document.getElementById("weather-icon").src = "images/rain.png";
+      } else if (data.weather[0].main === "Snow") {
+        document.getElementById = "images/snow.png";
+      } 
       } else {
         alert("Invalid city. Please enter a valid city name.");
       }
@@ -96,7 +105,16 @@
       document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " mph";
       document.querySelector(".sunrise p").innerHTML = convertUtcToLocalTime(data.sys.sunrise, data.timezone);
       document.querySelector(".sunset p").innerHTML = convertUtcToLocalTime(data.sys.sunset, data.timezone);
-      document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
+      if (data.weather[0].main === "Clear") {
+        document.getElementById("weather-icon").src = "images/clear.png";
+      } else if (data.weather[0].main === "Clouds") {
+        document.getElementById("weather-icon").src = "images/clouds.png";
+      } else if (data.weather[0].main === "Rain") {
+        document.getElementById("weather-icon").src = "images/rain.png";
+      } else if (data.weather[0].main === "Snow") {
+        document.body.style.backgroundImage = "url('images/snow.png')";
+      }
+      //document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
     }
 
     function getCurrentLocation() {
